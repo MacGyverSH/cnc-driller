@@ -1,0 +1,66 @@
+﻿<Window x:Class="CncDriller.Collimation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:CncDriller"
+        Title="Collimation" Height="530" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Label Content="help" Name="lbHelp"/>
+
+        <Grid Name="holeSelectionGrid" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="330"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        
+            <local:Controller HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" x:Name="controller"/>
+            <local:EditGrid Grid.Row="1" Grid.Column="1" x:Name="excellonEditor"/>
+        </Grid>
+        <Grid Grid.Row="1" Name="summaryGrid" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="1" Content="Diameter" />
+            <Label Grid.Row="0" Grid.Column="2" Content="Location" />
+
+            <Label Grid.Row="1" Content="Drill A" />
+            <Label Grid.Row="2" Content="Drill B" />
+
+            <Label Grid.Row="1" Grid.Column="1"  Content="0 mm" Name="lb_drillA_diameter" />
+            <Label Grid.Row="1" Grid.Column="2"  Content="0 x 0" Name="lb_drillA_position" />
+            <Label Grid.Row="2" Grid.Column="1"  Content="0 mm" Name="lb_drillB_diameter" />
+            <Label Grid.Row="2" Grid.Column="2"  Content="0 x 0" Name="lb_drillB_position" />
+            
+            <Label Grid.Row="4" Content="Distance of A and B" />
+            <Label Grid.Row="5" Content="PCB angle" />
+            <Label Grid.Row="6" Content="PCB translation" />
+
+            <Label Grid.Row="4" Grid.Column="1"  Content="0 mm" Name="lb_distance"/>
+            <Label Grid.Row="5" Grid.Column="1"  Content="0 °" Name="lb_angle"/>
+            <Label Grid.Row="6" Grid.Column="1"  Content="0 mm" Name="lb_translation"/>
+        </Grid>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button  Content="Move tool to the preset value" Name="btn_move" VerticalAlignment="Center" Margin="10 5 50 5" Padding="30 5" Visibility="Hidden" Click="btn_move_Click"/>
+            <Button  Content="Back" Name="btn_back" VerticalAlignment="Center" Margin="10 5" Padding="30 5" IsEnabled="False" Click="btn_back_Click"/>
+            <Button  Content="Next" Name="btn_next" VerticalAlignment="Center" Margin="10 5" Padding="30 5" Click="btn_next_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

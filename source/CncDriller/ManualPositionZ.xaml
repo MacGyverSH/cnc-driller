@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="CncDriller.ManualPositionZ"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CncDriller"
+             mc:Ignorable="d" 
+             d:DesignHeight="248" d:DesignWidth="66">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="control_z" UriSource="img/control_z.png" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        
+        <Canvas>
+            <Image Source="{StaticResource ResourceKey=control_z}" Width="66" Height="248"/>
+            <local:PathButton Canvas.Top="37" Canvas.Left="15" Data="M0,0 L0,28 L36,28 L36,0 Z" x:Name="btn_zp10"/>
+            <local:PathButton Canvas.Top="66" Canvas.Left="15" Data="M0,0 L0,25 L36,25 L36,0 Z" x:Name="btn_zp1"/>
+            <local:PathButton Canvas.Top="91" Canvas.Left="15" Data="M0,0 L0,22 L36,22 L36,0 Z" x:Name="btn_zp01"/>
+
+            <Ellipse Visibility="Hidden" Fill="#55005500" Canvas.Top="37" Canvas.Left="18" Height="29" Width="29" Name="round10"/>
+            <Ellipse Visibility="Hidden" Fill="#55005500" Canvas.Top="65" Canvas.Left="20" Height="26" Width="26" Name="round1"/>
+            <Ellipse Visibility="Hidden" Fill="#55005500" Canvas.Top="92" Canvas.Left="22" Height="21" Width="21" Name="round01"/>
+            
+            <local:PathButton Canvas.Top="127" Canvas.Left="15" Data="M0,0 L0,22 L36,22 L36,0 Z" x:Name="btn_zn01"/>
+            <local:PathButton Canvas.Top="150" Canvas.Left="15" Data="M0,0 L0,25 L36,25 L36,0 Z" x:Name="btn_zn1"/>
+            <local:PathButton Canvas.Top="175" Canvas.Left="15" Data="M0,0 L0,28 L36,28 L36,0 Z" x:Name="btn_zn10"/>
+            
+        </Canvas>
+    </Grid>
+    
+</UserControl>

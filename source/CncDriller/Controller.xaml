@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="CncDriller.Controller"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CncDriller"
+             mc:Ignorable="d" 
+             
+             Height="400" Width="315">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <FontFamily x:Key="test" >/font/#Advanced Pixel LCD-7</FontFamily>
+            <BitmapImage x:Key="control_xy" UriSource="img/control_xy.png" />
+            <BitmapImage x:Key="control_z" UriSource="img/control_z.png" />
+            <Style TargetType="{x:Type Label}" x:Key="coordinatesInfo">
+                <Style.Setters>
+                    <Setter Property="HorizontalAlignment" Value="Right"/>
+                    <Setter Property="FontFamily" Value="{StaticResource test}"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style.Setters>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="248"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="248"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <local:ManualPositionXY Click="ManualPosition_Click_1"/>
+        <Grid Grid.Column="1">
+            <local:ManualPositionZ Click="ManualPosition_Click_1"/>
+        </Grid>
+        <Border Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="0 1 0 0" BorderBrush="Black">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="143"/>
+                    <ColumnDefinition Width="143"/>
+                </Grid.ColumnDefinitions>
+
+                
+                <Label Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">World</Label>
+                <Label Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">Machine</Label>
+
+                <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Center">X</Label>
+                <Label Grid.Column="0" Grid.Row="2" VerticalAlignment="Center">Y</Label>
+                <Label Grid.Column="0" Grid.Row="3" VerticalAlignment="Center">Z</Label>
+
+                <local:CoordinateDisplay Grid.Column="1" Grid.Row="1" Foreground="#FFEEAA00" Data="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=WorldX}" />
+                <local:CoordinateDisplay Grid.Column="1" Grid.Row="2" Foreground="#FF5555FF" Data="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=WorldY}" />
+                <local:CoordinateDisplay Grid.Column="1" Grid.Row="3" Foreground="#FF00EE00" Data="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=WorldZ}" />
+
+                <local:CoordinateDisplay Grid.Column="2" Grid.Row="1" Foreground="#FFEEAA00" Data="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=MachineX}" />
+                <local:CoordinateDisplay Grid.Column="2" Grid.Row="2" Foreground="#FF5555FF" Data="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=MachineY}" />
+                <local:CoordinateDisplay Grid.Column="2" Grid.Row="3" Foreground="#FF00EE00" Data="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=MachineZ}" />
+
+                <Label Grid.ColumnSpan="3" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{Binding Status}"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

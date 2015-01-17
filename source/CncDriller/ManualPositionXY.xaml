@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="CncDriller.ManualPositionXY"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CncDriller"
+             mc:Ignorable="d" 
+             d:DesignHeight="248" d:DesignWidth="248">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="control_xy" UriSource="img/control_xy.png" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Canvas>
+            <Image Source="{StaticResource ResourceKey=control_xy}" Height="248" Width="248"/>
+            <local:PathButton Canvas.Top="8" Canvas.Left="48" Data="M75.5,0C46.466,0,20.017,10.944,0,28.938L15.281,44.219C31.366,30.123 52.432,21.594 75.5,21.594 98.57,21.594 119.665,30.121 135.75,44.219L151.031,28.938C131.015,10.944,104.534,0,75.5,0z" x:Name="btn_yp100"/>
+            <local:PathButton Canvas.Top="45" Canvas.Left="11" Data="M28.937,0C10.944,20.017 0,46.466 0,75.5 0,104.534 10.944,131.015 28.937,151.031L44.219,135.75C30.121,119.665 21.594,98.57 21.594,75.5 21.594,52.432 30.123,31.366 44.219,15.281L28.937,0z" x:Name="btn_xn100"/>
+            <local:PathButton Canvas.Top="45" Canvas.Left="193" Data="M15.313,0L0,15.313C14.088,31.396 22.656,52.439 22.656,75.5 22.656,98.563 14.091,119.635 0,135.719L15.313,151.031C33.3,131.016 44.25,104.529 44.25,75.5 44.25,46.472 33.3,20.015 15.313,0z" x:Name="btn_xp100"/>
+            <local:PathButton Canvas.Top="190" Canvas.Left="48" Data="M15.313,0L0,15.313C20.015,33.3 46.472,44.25 75.5,44.25 104.528,44.25 131.016,33.3 151.031,15.313L135.719,0C119.635,14.09 98.563,22.656 75.5,22.656 52.439,22.656 31.396,14.088 15.313,0z" x:Name="btn_yn100"/>
+
+            <local:PathButton Canvas.Top="55" Canvas.Left="82" Data="M42.875,0C26.551,0,11.623,5.829,0,15.531L17.406,32.938C24.507,27.616 33.318,24.469 42.875,24.469 52.432,24.469 61.274,27.616 68.375,32.938L85.781,15.531C74.158,5.829,59.199,0,42.875,0z" x:Name="btn_yp1"/>
+            <local:PathButton Canvas.Top="77" Canvas.Left="57" Data="M15.531,0C5.83,11.623 0,26.551 0,42.875 0,59.199 5.83,74.159 15.531,85.781L32.938,68.375C27.616,61.274 24.469,52.432 24.469,42.875 24.469,33.309 27.607,24.479 32.938,17.375L15.531,0z" x:Name="btn_xn1"/>
+            <local:PathButton Canvas.Top="77" Canvas.Left="157" Data="M17.406,0L0,17.406C5.322,24.507 8.469,33.318 8.469,42.875 8.469,52.432 5.322,61.274 0,68.375L17.406,85.781C27.107,74.159 32.938,59.198 32.938,42.875 32.938,26.552 27.107,11.623 17.406,0z" x:Name="btn_xp1"/>
+            <local:PathButton Canvas.Top="155" Canvas.Left="81" Data="M17.406,0L0,17.406C11.623,27.107 26.552,32.937 42.875,32.937 59.198,32.937 74.159,27.107 85.781,17.406L68.406,0C61.302,5.331 52.44,8.469 42.875,8.469 33.318,8.469 24.507,5.322 17.406,0z" x:Name="btn_yn1"/>
+
+            <local:PathButton Canvas.Top="95" Canvas.Left="81" Data="M8.469,0C3.138,7.104 0,15.934 0,25.5 0,35.057 3.147,43.899 8.469,51L33.969,25.5 8.469,0z" x:Name="btn_xn01"/>
+            <local:PathButton Canvas.Top="95" Canvas.Left="132" Data="M25.469,0L0,25.469 25.469,50.969C30.79,43.868 33.937,35.025 33.937,25.469 33.937,15.912 30.79,7.101 25.469,0z" x:Name="btn_xp01"/>
+            <local:PathButton Canvas.Top="79" Canvas.Left="99" Data="M25.469,0C15.912,0,7.101,3.147,0,8.469L25.5,33.938 50.969,8.469C43.868,3.147,35.026,0,25.469,0z" x:Name="btn_yp01"/>
+            <local:PathButton Canvas.Top="130" Canvas.Left="99" Data="M25.5,0L0,25.5C7.101,30.822 15.912,33.969 25.469,33.969 35.034,33.969 43.896,30.831 51,25.5L25.5,0z" x:Name="btn_yn01"/>
+
+            <local:PathButton Canvas.Top="30" Canvas.Left="64" Data="M60.219,0C37.151,0,16.085,8.529,0,22.625L17.344,39.969C28.967,30.267 43.895,24.438 60.219,24.438 76.542,24.438 91.502,30.267 103.125,39.969L120.469,22.625C104.383,8.527,83.288,0,60.219,0z" x:Name="btn_yp10"/>
+            <local:PathButton Canvas.Top="60" Canvas.Left="33" Data="M22.625,0C8.53,16.085 0,37.151 0,60.219 0,83.288 8.527,104.383 22.625,120.469L39.969,103.125C30.267,91.502 24.438,76.542 24.438,60.219 24.438,43.895 30.267,28.967 39.969,17.344L22.625,0z" x:Name="btn_xn10"/>
+            <local:PathButton Canvas.Top="60" Canvas.Left="175" Data="M17.313,0L0,17.313C9.701,28.935 15.531,43.865 15.531,60.188 15.531,76.51 9.701,91.471 0,103.094L17.313,120.406C31.403,104.323 39.969,83.25 39.969,60.188 39.969,37.127 31.401,16.083 17.313,0z" x:Name="btn_xp10"/>
+            <local:PathButton Canvas.Top="172" Canvas.Left="63" Data="M17.313,0L0,17.313C16.083,31.401 37.127,39.969 60.187,39.969 83.25,39.969 104.323,31.403 120.406,17.313L103.094,0C91.471,9.701 76.51,15.531 60.187,15.531 43.865,15.531 28.935,9.701 17.313,0z" x:Name="btn_yn10"/>
+
+            <local:PathButton Canvas.Top="8" Canvas.Left="188" Data="M0,8.724L0,0 47.105,0 47.105,46.64 37.051,46.64C37.051,46.64,21.318,20.64,0,8.724z" x:Name="btn_hY"/>
+            <local:PathButton Canvas.Top="8" Canvas.Left="11" Data="M47.105,8.724L47.105,0 0,0 0,46.64 10.054,46.64C10.054,46.64,25.787,20.64,47.105,8.724z" x:Name="btn_hX"/>
+            <local:PathButton Canvas.Top="185" Canvas.Left="11" Data="M47.105,37.916L47.105,46.64 0,46.64 0,0 10.054,0C10.054,0,25.787,26,47.105,37.916z" x:Name="btn_hA"/>
+            <local:PathButton Canvas.Top="185" Canvas.Left="188" Data="M0,37.916L0,46.64 47.105,46.64 47.105,0 37.051,0C37.051,0,21.318,26,0,37.916z" x:Name="btn_hZ"/>
+            
+
+
+            <Ellipse Visibility="Hidden" Fill="#55005500" Canvas.Top="27" Canvas.Left="186" Height="31" Width="31" Name="round100"/>
+            <Ellipse Visibility="Hidden" Fill="#55005500" Canvas.Top="50" Canvas.Left="165" Height="29" Width="29" Name="round10"/>
+            <Ellipse Visibility="Hidden" Fill="#55005500" Canvas.Top="73" Canvas.Left="148" Height="25" Width="25" Name="round1"/>
+            <Ellipse Visibility="Hidden" Fill="#55005500" Canvas.Top="95" Canvas.Left="132" Height="20" Width="20" Name="round01"/>
+
+        </Canvas>
+    </Grid>
+</UserControl>

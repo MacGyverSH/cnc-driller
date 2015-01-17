@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="CncDriller.PathButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Button Click="btn_click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Path Fill="#00000000" Data="{Binding Data}"/>
+                        <Path Visibility="Hidden" Fill="#55002200" Name="path" Data="{Binding Data}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="path" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="Button.IsPressed" Value="True">
+                            <Setter Property="Visibility" TargetName="path" Value="Visible"/>
+                            <Setter Property="Fill" TargetName="path" Value="#AA002200"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</UserControl>

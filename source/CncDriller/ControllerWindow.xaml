@@ -1,0 +1,10 @@
+﻿<Window x:Class="CncDriller.ControllerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:CncDriller"
+        Title="Controller" Height="430" Width="325" ResizeMode="NoResize">
+
+    <Grid>
+        <local:Controller />
+    </Grid>
+</Window>

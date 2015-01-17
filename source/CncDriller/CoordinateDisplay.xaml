@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="CncDriller.CoordinateDisplay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="31" d:DesignWidth="150">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <FontFamily x:Key="test" >/font/#Advanced Pixel LCD-7</FontFamily>
+            <BitmapImage x:Key="control_xy" UriSource="img/control_xy.png" />
+            <BitmapImage x:Key="control_z" UriSource="img/control_z.png" />
+            <Style TargetType="{x:Type Label}" x:Key="coordinatesInfo">
+                <Style.Setters>
+                    <Setter Property="HorizontalAlignment" Value="Right"/>
+                    <Setter Property="FontFamily" Value="{StaticResource test}"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style.Setters>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>        
+    <Grid>
+        <Border Background="Black" BorderThickness="1">
+            <Label Style="{StaticResource ResourceKey=coordinatesInfo}" Foreground="{Binding Foreground}" Content="{Binding FormattedData}"/>
+        </Border>
+    </Grid>
+</UserControl>

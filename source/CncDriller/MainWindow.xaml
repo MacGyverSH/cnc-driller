@@ -1,0 +1,50 @@
+﻿<Window x:Class="CncDriller.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:CncDriller"
+        Title="MainWindow" Height="500" Width="700">
+    <Window.Resources>
+        
+        <Style x:Key="menuButton" TargetType="{x:Type Button}">
+            <Style.Setters>
+                <Setter Property="Margin" Value="5 2"/>
+                <Setter Property="Padding" Value="15 5"/>
+                
+            </Style.Setters>
+        </Style>
+        
+    </Window.Resources>
+   
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button Content="Open file" Style="{StaticResource ResourceKey=menuButton}" Click="Button_Click_1"/>
+            <Button Content="Connection settings" Style="{StaticResource ResourceKey=menuButton}" Click="Button_Click_3"/>
+            <Button Content="Connect" Name="btn_connect" Style="{StaticResource ResourceKey=menuButton}" Click="btn_connect_click"/>
+            <Button Content="Collimation" Name="btn_collimation" Style="{StaticResource ResourceKey=menuButton}" Click="btn_collimation_Click"/>
+            <Button Content="Drilling" x:Name="btn_drilling" Style="{StaticResource ResourceKey=menuButton}" Click="btn_drilling_Click_1"/>
+        </StackPanel>
+        
+        <Grid Grid.Row="1">
+            <TextBlock Name="tbInfo"/>
+        </Grid>
+        
+        
+        <local:EditGrid Grid.Column="1" Grid.Row="1" x:Name="excellonEditor"/>
+        
+        <StatusBar Grid.Row="2" Grid.ColumnSpan="2">
+            <StatusBar.Items>
+                <StatusBarItem Content="aaa"/>
+                <StatusBarItem HorizontalAlignment="Right" Width="100" Content="0x0" x:Name="coordsText"/>
+            </StatusBar.Items>
+        </StatusBar>
+    </Grid>
+</Window>

@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="CncDriller.EditGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="389" d:DesignWidth="492">
+    <UserControl.Resources>
+        <ResourceDictionary>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid Grid.Row="1" Grid.Column="1" Background="LightGray" MouseWheel="drawSpace_MouseWheel" MouseMove="Grid_MouseMove_1" MouseDown="Grid_MouseDown_1" ClipToBounds="True">
+            <Grid>
+                <Canvas x:Name="drawCanvas" >
+                    <Canvas.LayoutTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="-1" CenterX=".5" CenterY=".5" />
+                    </Canvas.LayoutTransform>
+                </Canvas>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
