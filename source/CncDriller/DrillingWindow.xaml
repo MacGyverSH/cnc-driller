@@ -39,7 +39,7 @@
             </StackPanel>
         </Grid>
         <ProgressBar Grid.Row="1" Margin="5" Name="pgProgress"/>
-        <DataGrid Grid.Row="2" Name="dgDrills" AutoGenerateColumns="False">
+        <DataGrid Grid.Row="2" Name="dgDrills" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="" Width="20">
                     <DataGridTemplateColumn.CellTemplate>
